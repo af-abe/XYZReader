@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.xyzreader.presenter.models.ArticleListItemPresenter"/>
+    </data>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/space_small"
+                                        android:layout_marginStart="@dimen/space_small"
+                                        android:onClick="@{v -> item.onOpenArticle(context, v)}">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/item_placeholder"
+            android:transitionName='@{"img"+ item.id}'
+            app:loadImage="@{item.imageUrl}"
+            tools:ignore="ContentDescription"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/article_top_space"
+            android:background="@drawable/gradient"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/space_big"
+            android:paddingEnd="@dimen/space_med"
+            android:paddingStart="@dimen/space_med">
+
+            <TextView
+                style="@style/text_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_med"
+                android:text="@{item.title, default = Title}"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                style="@style/text_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_med"
+                android:text="@{item.date, default = Date}"
+                android:textSize="12sp"/>
+
+            <TextView
+                style="@style/text_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.author, default = Author}"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

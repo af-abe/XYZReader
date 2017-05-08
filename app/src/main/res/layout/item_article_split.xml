@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.xyzreader.presenter.models.ArticleSplitItemPresenter"/>
+    </data>
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:text="@{item.split}"
+              android:layout_marginTop="@dimen/space_med"
+              android:textSize="20sp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+</layout>
+

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">XYZReader</string>
+    <string name="error_dialog_msg">Ops, something went wrong. Check your internet connection and try again</string>
+    <string name="error_dialog_title">Error</string>
+    <string name="error_dialog_button">retry</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share">Share this Article</string>
+</resources>
