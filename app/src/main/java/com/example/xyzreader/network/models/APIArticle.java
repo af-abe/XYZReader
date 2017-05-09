@@ -1,12 +1,12 @@
 package com.example.xyzreader.network.models;
 
-import android.os.Parcel;
-
 import com.example.xyzreader.logic.models.IArticle;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
 
+//the fields seems to be unused, but this is becaus of Gson reflects field-Values
+@SuppressWarnings("unused")
 public class APIArticle implements IArticle {
     @SerializedName("id")
     private Integer id;
