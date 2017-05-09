@@ -10,48 +10,52 @@
             type="com.example.xyzreader.presenter.ArticleListPresenter"/>
     </data>
 
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="false"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.Toolbar
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/article_list"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingEnd="@dimen/space_small"
+            android:paddingStart="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:elevation="4dp"
-            app:layout_collapseMode="pin">
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:adjustViewBounds="true"
-                android:src="@drawable/logo"
-                app:layout_collapseMode="pin"
-                tools:ignore="ContentDescription"/>
-        </android.support.v7.widget.Toolbar>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/article_list"
+            <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false"
-                android:paddingEnd="@dimen/space_small"
-                android:paddingStart="0dp"/>
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
 
-            <ProgressBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="@{presenter.mLoadingVisibility}"/>
-        </FrameLayout>
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/logo"
+                    app:layout_collapseMode="pin"
+                    tools:ignore="ContentDescription"/>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{presenter.mLoadingVisibility}"/>
+
+    </android.support.design.widget.CoordinatorLayout>
+
 
 </layout>
 
