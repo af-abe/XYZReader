@@ -4,7 +4,6 @@ import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -56,7 +55,7 @@ public class ArticleDetailFragment extends Fragment {
 
         Bundle args = getArguments();
 
-        if(args != null){
+        if (args != null) {
 
             mArticle = RealmHelper.loadArticleById(args.getInt(ARGS_ARTICLE));
         }
@@ -69,7 +68,7 @@ public class ArticleDetailFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_article_detail, container, false);
         mPresenter = new ArticleDetailPresenter(mArticle);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            binding.toolbarImage.setTransitionName("image"+mPresenter.getId());
+            binding.toolbarImage.setTransitionName("image" + mPresenter.getId());
         }
         return binding.getRoot();
     }
